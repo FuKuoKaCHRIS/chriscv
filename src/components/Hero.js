@@ -9,7 +9,7 @@ const Hero = () => {
             <div className="w-32 h-32 mx-auto mb-6 rounded-full overflow-hidden border-4 border-primary-100">
               <img 
                 src={process.env.PUBLIC_URL + '/profile.jpg'} 
-                alt="チョ・ジェウクプロフィール写真" 
+                alt="ジョ ジェウクプロフィール写真" 
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   e.target.src = 'data:image/svg+xml;base64,PHN2ZyBjbGFzcz0idyAxNiBoLTE2IHRleHQtZ3JheS00MDAiIGZpbGw9ImN1cnJlbnRDb2xvciIgdmlld0JveD0iMCAwIDIwIDIwIj4KPHBhdGggZmlsbFJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xMCA5YTMgMyAwIDEwMC02IDMgMyAwIDAwMCA2em0tNyA5YTcgNyAwIDExMTQgMEgzeiIgY2xpcFJ1bGU9ImV2ZW5vZGQiIC8+Cjwvc3ZnPgo='
@@ -19,7 +19,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
-            こんにちは、<span className="text-primary-600">チョ・ジェウク</span>です
+            こんにちは、<span className="text-primary-600">ジョ ジェウク</span>です
           </h1>
           
           <p className="text-xl sm:text-2xl text-gray-600 mb-8 font-light">

@@ -68,7 +68,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">メール</h4>
-                  <p className="text-gray-600">お問い合わせフォームよりご連絡ください</p>
+                  <p className="text-gray-600">flychris2016@gmail.com</p>
                 </div>
               </div>
               
@@ -80,8 +80,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-900">GitHub</h4>
-                  <a href="https://github.com/username" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
-                    github.com/username
+                  <a href="https://github.com/FuKuoKaCHRIS" target="_blank" rel="noopener noreferrer" className="text-primary-600 hover:text-primary-700">
+                    github.com/FuKuoKaCHRIS
                   </a>
                 </div>
               </div>

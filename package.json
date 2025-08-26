@@ -1,7 +1,7 @@
 {
   "name": "jaeuk-cho-portfolio",
   "version": "1.0.0",
-  "description": "チョ・ジェウクQAエンジニアポートフォリオ",
+  "description": "ジョ ジェウクQAエンジニアポートフォリオ",
   "private": true,
   "scripts": {
     "start": "react-scripts start",
