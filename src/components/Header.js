@@ -41,7 +41,7 @@ const Header = () => {
               onClick={() => scrollToSection('projects')}
               className="text-gray-700 hover:text-primary-600 transition-colors"
             >
-              プロジェクト
+              実習活動
             </button>
             <button 
               onClick={() => scrollToSection('career')}

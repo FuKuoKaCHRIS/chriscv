@@ -37,7 +37,7 @@ const Hero = () => {
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-8 py-3 border-2 border-primary-600 text-primary-600 rounded-lg hover:bg-primary-50 transition-colors font-medium"
             >
-              プロジェクトを見る
+              実習活動を見る
             </button>
           </div>
         </div>

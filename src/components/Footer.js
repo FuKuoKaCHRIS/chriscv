@@ -44,7 +44,7 @@ const Footer = () => {
                   onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  プロジェクト
+                  実習活動
                 </button>
               </li>
               <li>
