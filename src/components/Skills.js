@@ -1,78 +1,159 @@
-import React from 'react';
+import React, { useState } from "react";
 
-const Skills = () => {
-  const skills = [
-    {
-      category: "テスト手法",
-      items: ["ソフトウェアテスト", "機能テスト", "性能テスト", "リグレッションテスト"]
+export default function Skills() {
+  const [lang, setLang] = useState("ja");
+
+  const content = {
+    ko: {
+      title: "기술 스택",
+      lead:
+        "QA 엔지니어로 준비하며 숙련도에 따라 정리했습니다. (솔직함을 위해 현재 수준을 명시)",
+      columns: [
+        {
+          key: "experience",
+          icon: "✅",
+          name: "사용 경험 있음",
+          note: "작은 실습·강의 과제 중심",
+          items: [
+            "Java",
+            "HTML",
+            "CSS",
+            "GitHub (버전 관리 기본)"
+          ]
+        },
+        {
+          key: "learning",
+          icon: "🧪",
+          name: "학습 중 (기초부터)",
+          note: "학습 노트·연습 리포트 작성 중",
+          items: [
+            "테스트 케이스 작성 (시나리오 설계·기술)",
+            "버그 리포트 작성 (재현 절차 정리)",
+            "수동 테스트 기초 (기능/회귀)"
+          ]
+        },
+        {
+          key: "next",
+          icon: "📈",
+          name: "앞으로 학습 예정",
+          note: "연습 프로젝트에 단계적 적용 예정",
+          items: [
+            "Selenium / Cypress",
+            "Jest",
+            "성능 테스트, 우선순위 설정"
+          ]
+        }
+      ],
+      foot:
+        "* 실무 경력은 준비 중입니다. 학습·연습 결과물은 GitHub와 포트폴리오에 지속적으로 업데이트하겠습니다."
     },
-    {
-      category: "バグ管理",
-      items: ["バグトラッキング", "レポーティング", "再現シナリオ作成", "優先度設定"]
-    },
-    {
-      category: "自動化ツール",
-      items: ["Selenium", "Cypress", "Jest", "テストシナリオ自動化"]
-    },
-    {
-      category: "コラボレーションツール",
-      items: ["GitHub", "Git", "Jira", "ドキュメント作成"]
+    ja: {
+      title: "技術スタック",
+      lead:
+        "QAエンジニアとして準備を進めるにあたり、現在の習熟度に応じて整理しています（正直さのためレベルを明記）。",
+      columns: [
+        {
+          key: "experience",
+          icon: "✅",
+          name: "使用経験あり",
+          note: "小さな実習・課題ベース",
+          items: [
+            "Java",
+            "HTML",
+            "CSS",
+            "GitHub（基本的なバージョン管理）"
+          ]
+        },
+        {
+          key: "learning",
+          icon: "🧪",
+          name: "学習中（基礎から）",
+          note: "学習ノート・練習レポート作成中",
+          items: [
+            "テストケース作成（シナリオの設計と記述）",
+            "バグレポート作成（再現手順の整理）",
+            "手動テストの基礎（機能テスト／リグレッションテスト）"
+          ]
+        },
+        {
+          key: "next",
+          icon: "📈",
+          name: "今後学びたい技術",
+          note: "練習プロジェクトに段階的に適用予定",
+          items: [
+            "Selenium / Cypress",
+            "Jest",
+            "性能テスト、優先度設定"
+          ]
+        }
+      ],
+      foot:
+        "※ 実務経験は現在準備中です。学習・練習の成果はGitHubとポートフォリオに継続的に更新します。"
     }
-  ];
+  };
+
+  const t = content[lang];
 
   return (
-    <section id="skills" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-            技術スタック
-          </h2>
-          <div className="w-20 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            QAエンジニアとして保有している技術とツールです
-          </p>
+    <section id="skills" className="w-full bg-gray-50 py-20">
+      <div className="mx-auto max-w-5xl px-6">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between mb-8">
+          <div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">{t.title}</h2>
+            <div className="w-20 h-1 bg-primary-600 mb-4"></div>
+            <p className="text-sm text-gray-600">{t.lead}</p>
+          </div>
+
+          <div className="mt-3 flex items-center gap-2 sm:mt-0">
+            <span className="text-xs text-gray-500">Language</span>
+            <div className="rounded-2xl border border-gray-200 p-1">
+              <button
+                aria-label="한국어"
+                onClick={() => setLang("ko")}
+                className={`rounded-xl px-3 py-1 text-sm transition ${
+                  lang === "ko" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                한국어
+              </button>
+              <button
+                aria-label="日本語"
+                onClick={() => setLang("ja")}
+                className={`rounded-xl px-3 py-1 text-sm transition ${
+                  lang === "ja" ? "bg-gray-900 text-white" : "text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                日本語
+              </button>
+            </div>
+          </div>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {skills.map((skillGroup, index) => (
-            <div key={index} className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-              <div className="mb-6">
-                <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
-                          d={index === 0 ? "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" :
-                             index === 1 ? "M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" :
-                             index === 2 ? "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" :
-                             "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"} />
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">{skillGroup.category}</h3>
+
+        <div className="mt-8 grid gap-6 md:grid-cols-3">
+          {t.columns.map((col) => (
+            <div
+              key={col.key}
+              className="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm hover:shadow-md transition-shadow"
+            >
+              <div className="flex items-center gap-2">
+                <div className="text-xl" aria-hidden>{col.icon}</div>
+                <h3 className="text-lg font-semibold">{col.name}</h3>
               </div>
-              
-              <div className="space-y-3">
-                {skillGroup.items.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="flex items-center">
-                    <div className="w-2 h-2 bg-primary-600 rounded-full mr-3"></div>
-                    <span className="text-gray-700">{skill}</span>
-                  </div>
+              <ul className="mt-4 space-y-2 text-sm leading-6 text-gray-800">
+                {col.items.map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="mt-1 inline-block h-1.5 w-1.5 flex-none rounded-full bg-gray-400" />
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
+              <p className="mt-4 text-xs text-gray-500">{col.note}</p>
             </div>
           ))}
         </div>
-        
-        <div className="mt-12 text-center">
-          <p className="text-gray-600 mb-4">継続的な学習を通じて新しい技術を習得しています</p>
-          <div className="inline-flex items-center px-4 py-2 bg-primary-50 rounded-full">
-            <svg className="w-4 h-4 text-primary-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M12 7a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0V8.414l-4.293 4.293a1 1 0 01-1.414 0L8 10.414l-4.293 4.293a1 1 0 01-1.414-1.414l5-5a1 1 0 011.414 0L11 10.586 14.586 7H12z" clipRule="evenodd" />
-            </svg>
-            <span className="text-primary-700 font-medium">成長するQAエンジニア</span>
-          </div>
-        </div>
+
+        <p className="mt-8 text-xs text-gray-500 text-center">{t.foot}</p>
       </div>
     </section>
   );
-};
-
-export default Skills;
+}
